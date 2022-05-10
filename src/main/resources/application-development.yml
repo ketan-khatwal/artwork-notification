@@ -1,0 +1,38 @@
+spring:
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+  jpa:
+    show-sql: true
+    database: POSTGRESQL
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+          time_zone: UTC
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/bizongo_development?currentSchema=ums
+    username: ketan.khatwal
+    password:
+    hikari:
+      maximumPoolSize: 50
+jasypt:
+  encryptor:
+    password: ${ENCRYPTOR_PASSWORD}
+jwt-token-secret: ENC(QirdsyHxkom7Tu3nUmJdpd6mIrCwDgUDpJIwx86zc/mSmpoO1IoM7c+QNLfOY4HHmBFc9GSrkJfZthvquLXuJPFPEhKKxUoAzG34f5ExrF7yai4vvi7z5ZQT+kCEHhZ42lu1BSeDfEX0dWArQpSRRReE+7z6HkBqKnV+o5ZAPOCUqFqkdO4iFPeIlTTvMzOk)
+secret-token: ENC(ZlRihGCUL9/mXugNhNuvz+ObiQnyrhNu/ABvoBWITYT1HAgUD1MBwvPEj7yOc5Ukm83bbYyMBqUdpBsLfRk6CVJcWmWn/C3xUHntCt7WIm0wn1NzO8Ul7fYNWt7m6s0i1O9nRi2t0dfOkAJpiVU0RPqZvsupio6r5c6o0gDpvGtv8AfM+JkAoTLYabDIfScI)
+bizongo-backend:
+  leadplus-jwt-secret-key: ENC(AlWnAcYjn3U3QMu5WxnL1KyPv/Z+BRlJp7uQSUOqRLSQrL3w9+lBLP/Ie5+sbU0e2sg9GlBHoWwjcNMlyNikhv6Cf7tJ71ptl1nF55T2wHHMgeZ6QdPPdPFqIKHNwAhE2WWE+/xFDNGCQiXE8efV8lTfXzr1IeEaF7Wz3CFODoRXdCKitPLddrEk8KHzCCLw)
+  procure-live-jwt-secret-key: ENC(/Ecm4XXexM4FEvKWDd6CDV3kvX7HWEun0ObMBXVoGIzn+UDRSUZIL/TkVaUSsOMIP2cMMwGAh2sSrwchk2CTk8mq7clIUgYR4XLgoZkArXjXW0vqNPTf4RRE0Dp+KWeGJtOPcJ93nU3/RerL2qKlvHhqHdHtoIGVr1aZa7/2pnhFWSGBEleQZIqa1Kjh0iLT)
+flyway:
+  enabled: true
+  locations: classpath:migration
+  url: jdbc:postgresql://localhost:5432/bizongo_development?currentSchema=ums
+  username: ketan.khatwal
+  password:
+
+ums:
+  url: http://localhost:10000
+  urlCom: http://localhost:10000
