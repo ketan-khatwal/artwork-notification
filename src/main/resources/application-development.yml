@@ -13,7 +13,7 @@ spring:
           time_zone: UTC
   datasource:
     platform: postgres
-    url: jdbc:postgresql://localhost:5432/bizongo_development?currentSchema=ums
+    url: jdbc:postgresql://localhost:5432/bizongo_development?currentSchema=artwork_setup
     username: ketan.khatwal
     password:
     hikari:
@@ -29,7 +29,7 @@ bizongo-backend:
 flyway:
   enabled: true
   locations: classpath:migration
-  url: jdbc:postgresql://localhost:5432/bizongo_development?currentSchema=ums
+  url: jdbc:postgresql://localhost:5432/bizongo_development?currentSchema=artwork_setup
   username: ketan.khatwal
   password:
 
