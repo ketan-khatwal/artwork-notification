@@ -7,6 +7,7 @@ import com.bizongo.artwork.audit.services.AuditLogsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +31,8 @@ public class AuditLogsController {
     @GetMapping("/log")
     public ResponseEntity<List<AccountActivities>> getAuditLogs(@RequestParam("user_id") int userId) {
         Optional<List<AccountActivities>> accountActivities = auditLogsService.findByUserId(userId);
+        // To get user data
+        //System.out.println(SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         return new ResponseEntity<>(accountActivities.get(), HttpStatus.OK);
     }
 }

@@ -1,3 +1,5 @@
+server:
+  port: 8081
 spring:
   flyway:
     enabled: true
@@ -18,6 +20,12 @@ spring:
     password:
     hikari:
       maximumPoolSize: 50
+
+  ums:
+    secret-token: hbicfwidx851yifx0k2or527udm5thn6w22wy7wkm0ms60beg5qvci00k3km7qxejlvurs1xjr8kpipl8hggwptllq4v3azg8kblncpb7l8vbp0muw6pjp1t7rh57i92
+    url: http://localhost:8080
+    validate:
+      api: /api/users/validate
 jasypt:
   encryptor:
     password: ${ENCRYPTOR_PASSWORD}
@@ -32,7 +40,17 @@ flyway:
   url: jdbc:postgresql://localhost:5432/bizongo_development?currentSchema=artwork_setup
   username: ketan.khatwal
   password:
-
 ums:
-  url: http://localhost:10000
-  urlCom: http://localhost:10000
+  url: http://localhost:8080
+  validate:
+    api: /api/users/validate
+  fetch-user:
+    api: /api/users/
+  fetch-company:
+    api: /api/companies/
+  secret-token: hbicfwidx851yifx0k2or527udm5thn6w22wy7wkm0ms60beg5qvci00k3km7qxejlvurs1xjr8kpipl8hggwptllq4v3azg8kblncpb7l8vbp0muw6pjp1t7rh57i92
+#secret-token: UwuzN0l5UcJCULiVyLoDfAjhde7HJxDV8vnuPkR8x52q5zyVElH/WpjtaHnJqFbouyeCASMQ6oT5myBUdvcI6A==
+leadplus:
+  secret_key: ''
+bot_user_id: 34029
+bot_token: 97ecf942f0c5e31feb05239c48308081
